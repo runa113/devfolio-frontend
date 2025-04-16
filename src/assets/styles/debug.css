@@ -1,0 +1,36 @@
+/* DEBUG GLOBAL STYLES */
+
+* {
+  outline: 1px dashed rgba(255, 255, 0, 0.4); /* contorno para todos los elementos */
+}
+
+img {
+  outline: 2px dashed blue;
+}
+
+form {
+  outline: 2px dashed orange;
+}
+
+input, textarea, select, button {
+  outline: 2px solid red;
+}
+
+/* Colores de fondo por secciones comunes */
+header {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+section {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+footer {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+/* Clase manual para inspección personalizada */
+.debug {
+  outline: 2px dashed red !important;
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
