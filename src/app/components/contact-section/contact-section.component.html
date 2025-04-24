@@ -1,0 +1,106 @@
+<!-- Contacto sin css-->
+<!--
+  <section class="py-5" id="contacto">
+    <div class="container">
+      <h2 class="mb-4">Contacto</h2>
+      <form>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section> -->
+
+<section class="contact-section" id="contacto">
+  <div class="container">
+    <h2 class="mb-4 text-center">Contacto</h2>
+
+    <div *ngIf="envioExitoso" class="alert alert-success alert-dismissible fade show" role="alert">
+      ¡Mensaje enviado con éxito!
+      <button type="button" class="btn-close" aria-label="Close" (click)="envioExitoso = false"></button>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" class="form-control" formControlName="nombre" />
+        <div class="text-danger small mt-1"
+        *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.invalid">
+          <span *ngIf="contactForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</span>
+          <span *ngIf="contactForm.get('nombre')?.errors?.['soloLetras']">Solo se permiten letras y espacios.</span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" id="email" class="form-control" formControlName="email" />
+        <div class="text-danger small mt-1"
+          *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+          <span *ngIf="contactForm.get('email')?.errors?.['required']">El correo es obligatorio.</span>
+          <span *ngIf="contactForm.get('email')?.errors?.['email']">El formato del correo no es válido.</span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea id="mensaje" class="form-control" rows="4" formControlName="mensaje"></textarea>
+        <div class="text-danger small mt-1"
+          *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.invalid">
+          <span *ngIf="contactForm.get('mensaje')?.errors?.['required']">El mensaje es obligatorio.</span>
+          <span *ngIf="contactForm.get('mensaje')?.errors?.['maxlength']">Máximo 500 caracteres.</span>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group" [ngClass]="{ 'has-error': obtenerMensajeError('telefono1') }">
+          <label for="telefono1">Número telefónico 1<span class="red" aria-label="Dato obligatorio">*:</span></label>
+          <input type="text"
+          class="form-control" id="telefono1" formControlName="telefono1" placeholder="Ej. 5551234567"
+            maxlength="10">
+          <small class="text-danger">
+            {{ obtenerMensajeError('telefono1') }}
+          </small>
+        </div>
+      </div>
+
+
+      <!-- Campo adicional: Número telefónico -->
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Número telefónico 2</label>
+        <input type="text" id="telefono" class="form-control" formControlName="telefono" placeholder="Ej. 5551234567"
+          maxlength="10" />
+        <div class="text-danger small mt-1"
+          *ngIf="contactForm.get('telefono')?.touched && contactForm.get('telefono')?.invalid">
+          <span *ngIf="contactForm.get('telefono')?.errors?.['required']">El número es obligatorio. &nbsp;</span>
+          <span *ngIf="contactForm.get('telefono')?.errors?.['telefonoInvalido']">Debe contener exactamente 10 dígitos
+            numéricos.</span>
+        </div>
+      </div>
+
+      <!-- Campo adicional: Nombre del Alias -->
+      <div class="mb-3">
+        <label for="nombreLey" class="form-label">Nombre de la Alias</label>
+        <input type="text" id="nombreLey" class="form-control" formControlName="nombreAlias" appAlphanumeric
+          [allowSpaces]="true" maxlength="10" placeholder="Ej. Alias " />
+        <div class="text-danger small mt-1"
+          *ngIf="contactForm.get('nombreAlias')?.touched && contactForm.get('nombreAlias')?.invalid">
+          {{ obtenerMensajeError('nombreAlias') }}
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+</section>

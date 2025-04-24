@@ -1,0 +1,24 @@
+.hero {
+  background: linear-gradient(135deg, #6f42c1, #0d6efd);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* .hero {
+  background-color: black !important;
+  color: lime !important;
+} */
+.hero img.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.project-card img {
+  height: 180px;
+  object-fit: cover;
+}

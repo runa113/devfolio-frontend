@@ -1,0 +1,7 @@
+.contact-section {
+  padding: 60px 0;
+}
+
+.contact-section .form-control.ng-touched.ng-invalid {
+  border-color: #dc3545;
+}
