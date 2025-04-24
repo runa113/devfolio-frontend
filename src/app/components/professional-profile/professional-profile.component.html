@@ -37,26 +37,35 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
-    <img src="assets/img/123.jpg" alt="Foto de perfil" class="profile-pic">
-    <h1 class="display-4">Hola, soy Facundo Acuña</h1>
-    <!-- <p class="lead">Diseñador Gráfico & Fotógrafo freelance</p> -->
-    <p class="lead">Desarrolador Web</p>
-    <a href="#proyectos" class="btn btn-light mt-3">Ver portafolio</a>
-  </div>
-  <div class="d-flex justify-content-center gap-3 mt-4">
+    <!-- <div class="card bg-white bg-opacity-25 border-0 shadow-lg p-4 mx-auto text-center" style="max-width: 500px;"> -->
+      <!-- Sin El div de arriba la imagen queda centrada -->
+      <!-- <img src="assets/img/123.jpg" alt="Foto de perfil" class="profile-pic"> -->
+
+      <img src="assets/img/123.jpg" alt="Foto de perfil" class="profile-pic mb-3 mx-auto d-block">
+      <h1 class="display-4">Hola, soy Facundo Acuña</h1>
+
+      <!-- <p class="lead">Diseñador Gráfico & Fotógrafo freelance</p> -->
+      <p class="lead">Desarrolador Web</p>
+      <a href="#proyectos" class="btn btn-light mt-3">Ver portafolio</a>
+      <!-- Se comenta div del card -->
+    <!-- </div> -->
 
 
-    <!-- <button class="btn btn-outline-primary" (click)="verCV()">
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+
+
+      <!-- <button class="btn btn-outline-primary" (click)="verCV()">
         <i class="bi bi-eye"></i> Ver CV
       </button> -->
 
-    <!--
+      <!--
       <a href="assets/docs/cv.pdf" target="_blank" class="btn btn-outline-primary">
         <i class="bi bi-eye"></i> Ver CV
       </a>
        -->
 
-    <!-- <a href="assets/docs/cv.pdf" target="_blank" rel="noopener" class="btn btn-outline-primary">
+      <!-- <a href="assets/docs/cv.pdf" target="_blank" rel="noopener" class="btn btn-outline-primary">
         <i class="bi bi-eye"></i> Ver CV
       </a>
        -->
@@ -68,43 +77,40 @@
     style="border: none; box-shadow: 0 0 10px rgba(0,0,0,0.1);"
   ></iframe> -->
 
+      <!-- Botón para abrir el modal -->
+      <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#cvModal">
+        <i class="bi bi-eye"></i> Ver CV
+      </button>
 
-    <!-- Botón para abrir el modal -->
-
-    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#cvModal">
-      <i class="bi bi-eye"></i> Ver CV
-    </button>
-
-    <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cvModal">
+      <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cvModal">
   <i class="bi bi-eye"></i> Ver CV
 </button> -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cvModalLabel">Previsualización del CV</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body">
-            <object data="assets/docs/cv.pdf" type="application/pdf" width="100%" height="600px">
-              <p>Tu navegador no puede mostrar el PDF. <a href="assets/docs/cv.pdf">Descargar PDF</a>.</p>
-            </object>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <a href="assets/docs/cv.pdf" download class="btn btn-primary">
+      <!-- <a href="assets/docs/cv.pdf" download class="btn btn-primary">
   <i class="bi bi-download"></i> Descargar CV
 </a> -->
 
-    <a href="assets/docs/cv.pdf" download class="btn btn-outline-light ms-3">
-      <i class="bi bi-download"></i> Descargar CV
-    </a>
+      <a href="assets/docs/cv.pdf" download class="btn btn-outline-light ms-3">
+        <i class="bi bi-download"></i> Descargar CV
+      </a>
+    </div>
+  </div>
 
-
+  <!-- Modal -->
+  <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cvModalLabel">Previsualización del CV</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <object data="assets/docs/cv.pdf" type="application/pdf" width="100%" height="600px">
+            <p>Tu navegador no puede mostrar el PDF. <a href="assets/docs/cv.pdf">Descargar PDF</a>.</p>
+          </object>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
